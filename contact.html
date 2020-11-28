@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta name="description" content="Ash Tree Estates - Your Bristol student letting company">
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+      <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="assets/css/styles.css" type="text/css">
+      <title>Ash Tree Estates</title>
+      <link rel="icon" href="assets/images/logo-black.jpg" type="image/jpg">
+   </head>
+   <body>
+      <header id="header">
+         <button onclick="topFunction()" id="topBtn" title="Go to top">Back to Top</button>
+         <a href="index.html">
+            <h1><img src="assets/images/logo.png" alt="logo"><br>
+               ASH TREE ESTATES
+            </h1>
+         </a>
+      </header>
+      <nav class="row navbar navbar-expand-lg navbar-dark bg-blue" id="navbar" >
+         <div class="nav-options">
+            <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button> 
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+               <ul class="navbar-nav">
+                  <li class="nav-item nav-link-home">
+                     <a class="nav-link" href="properties.html">Properties<span class="sr-only"></span></a>
+                  </li>
+                  <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Downloads</a>
+                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="assets/downloads/application-form.docx" target="_blank">Application Form</a>
+                        <a class="dropdown-item" href="assets/downloads/standing-order.docx" target="_blank">Standing Order</a>
+                        <a class="dropdown-item" href="assets/downloads/data-audit.pdf" target="_blank">Data Audit Form</a>
+                        <a class="dropdown-item" href="assets/downloads/data-protection.pdf" target="_blank">Data Protection Notice</a>
+                        <a class="dropdown-item" href="assets/downloads/guarantor-form.pdf" target="_blank">Guarantor Form</a>
+                        <a class="dropdown-item" href="assets/downloads/tenancy-contract.pdf" target="_blank">Tenancy Contract</a>
+                        <a class="dropdown-item" href="assets/downloads/money-protection.pdf" target="_blank">Money Protection Certificate</a>
+                     </div>
+                  </li>
+                  <li class="nav-item active">
+                     <a class="nav-link" href="contact.html">Contact</a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+      <div class="contact-hero-section">
+         <div class="row">
+            <div class="mx-auto">
+               <div class="jumbotron">
+                  <h2>Get in touch!</h2>
+                  <p><strong>Call on </strong><br><i class="fa fa-phone"></i> 07976 822 797</p>
+                  <p><strong> Email at </strong><br> <i class="fa fa-envelope-square"></i> valdelancey@yahoo.com</p>
+                  <p><strong>Or</strong></p>
+                  <button id="book-btn" class="btn">Send an Enquiry</button>
+                  <!-- Form Modal -->
+                  <div class="modal fade" tabindex="-1" role="dialog" id="formModal">
+                     <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                           <form onsubmit="return sendMail(this);" id="myForm">
+                              <div class="form-group form-modal">
+                                 <label for="inputName">Full Name</label>
+                                 <textarea class="form-control" id="inputName" rows="1" placeholder="Full Name" required></textarea>
+                              </div>
+                              <div class="form-group form-modal">
+                                 <label for="inputEmail">Email Address</label>
+                                 <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Email Address" required>        
+                              </div>
+                              <div class="form-group form-modal">
+                                 <label for="inputPhone">Phone Number</label>
+                                 <input type="number" class="form-control" id="inputPhone" aria-describedby="emailHelp" placeholder="Phone Number" required>        
+                              </div>
+                              <div class="form-group form-modal">
+                                 <label for="projectSummary">How can we help?</label>
+                                 <textarea class="form-control" id="projectSummary" rows="3" placeholder="Number of bedrooms, location, budget"></textarea>
+                                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                              </div>
+                              <button type="submit" id ="submit" class="btn btn-primary">Submit</button>
+                           </form>
+                        </div>
+                     </div>
+                     <!-- Thank you Modal -->
+                     <div class="modal fade" tabindex="-1" role="dialog" id="emailModal">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                           <div class="modal-content">
+                              <div class="modal-header">
+                                 <h4 class="modal-title text-center modal-head">Thank you</h4>
+                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                              </div>
+                              <div class="modal-body text-center modal-content">
+                                 <p>Many thanks for your enquiry, I'll be in touch soon!</p>
+                              </div>
+                              <div class="modal-footer">
+                                 <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="about-section">
+         <div class="row">
+            <div class="col-lg-4">
+               <img src = "assets/images/people.jpg" alt="Students looking over Clifton Suspension Bridge">
+            </div>
+            <div class="col-lg-4">
+               <h2>Why Ash Tree Estates?</h2>
+               <br>
+               <p>You can benefit from my 24 years experience in Student Property Management.<br><br>
+                  Handling just a few exclusive, hand picked properties means you receive a professional, rapid and very personal service.
+                  I work from home and keep my Smart Phone on me 7 days a week, so you will always receive an immediate response.<br><br>
+                  You also have access to a loyal and trusted maintenance team. I have worked with them all for many years. 
+                  One maintenance person also keeps keys and you will be given his/her contact details.<br><br>
+                  Located in Bristol, I am in close proximity to all the properties, so calling round to discuss issues is never a problem.<br><br>
+                  I am a member of the Property Redress Scheme, Client Money Protection Scheme and the Residential Landlords Association.<br><br>
+                  Tenants are not charged any fees for reserving my managed properties. Landlords are charged 10% of rent for full management.<br><br>
+                  Letting fee is 15% of one month’s rent and accompanied viewings are a further 25% of one month’s rent. However no new properties will be managed by Ash Tree Estates.<br><br>
+                  Enjoy looking through the site and I hope to hear from you soon!<br><br>
+                  Val de Lancey - Property Manager
+               </p>
+            </div>
+            <div class="col-lg-4">
+               <img src = "assets/images/park-st.jpg" alt="Park Street, Bristol">
+            </div>
+         </div>
+      </div>
+      <footer>
+         <div class="row">
+            <div class="col-sm-4">
+               <p>Ash Tree Estates &#169;</p>
+            </div>
+            <div class="col-sm-4">
+               <p><i class="fa fa-phone"></i> 07976 822 797</p>
+            </div>
+            <div class="col-sm-4">
+               <p>Website created by Adam de Lancey <a href="https://github.com/adamdelancey" target="_blank"><i class="fab fa-github"></i></a></p>
+            </div>
+         </div>
+      </footer>
+      <!-- EmailJS scripts -->
+      <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+      <script> (function(){emailjs.init("user_scvEXqvGskRGGpE58Sfoi");   })();</script> 
+      <!-- JQuery scripts -->
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <!-- My scripts -->
+      <script src="assets/js/contact.js"></script> 
+      <script src="assets/js/top-function.js"></script>   
+      <!-- Bootstrap scripts -->
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+   </body>
+</html>

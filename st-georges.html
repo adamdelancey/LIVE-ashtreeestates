@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta name="description" content="Ash Tree Estates - Your Bristol student letting company">
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+      <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="assets/css/styles.css" type="text/css">
+      <title>Ash Tree Estates</title>
+      <link rel="icon" href="assets/images/logo-black.jpg" type="image/jpg">
+   </head>
+   <body>
+      <input type="text" id="property" name="stgeorges">
+      <button onclick="topFunction()" id="topBtn" title="Go to top">Back to Top</button>
+      <header>
+         <a href="index.html">
+            <h1><img src="assets/images/logo.png" alt="logo"><br>
+               ASH TREE ESTATES
+            </h1>
+         </a>
+      </header>
+      <nav class="row navbar navbar-expand-lg navbar-dark bg-blue" id="navbar">
+         <div class="nav-options">
+            <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button> 
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+               <ul class="navbar-nav">
+                  <li class="nav-item nav-link-home active">
+                     <a class="nav-link" href="properties.html">Properties<span class="sr-only"></span></a>
+                  </li>
+                  <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Downloads</a>
+                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="assets/downloads/application-form.docx" target="_blank">Application Form</a>
+                        <a class="dropdown-item" href="assets/downloads/standing-order.docx" target="_blank">Standing Order</a>
+                        <a class="dropdown-item" href="assets/downloads/data-audit.pdf" target="_blank">Data Audit Form</a>
+                        <a class="dropdown-item" href="assets/downloads/data-protection.pdf" target="_blank">Data Protection Notice</a>
+                        <a class="dropdown-item" href="assets/downloads/guarantor-form.pdf" target="_blank">Guarantor Form</a>
+                        <a class="dropdown-item" href="assets/downloads/tenancy-contract.pdf" target="_blank">Tenancy Contract</a>
+                        <a class="dropdown-item" href="assets/downloads/money-protection.pdf" target="_blank">Money Protection Certificate</a>
+                     </div>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="contact.html">Contact</a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+      <div class="basics-section">
+         <h1>St George's Road, Hotwells</h1>
+         <p><i class="fas fa-bed"></i> 2 &emsp;<i class="fas fa-bath"></i> 1 &emsp; <i class="fas fa-pound-sign"></i> 525 each pcm </p>
+         <ul>
+            <li>5 minutes walk from Bristol University down Jacobs Wells Road</li>
+            <li>2 very large study rooms (each room on a separate floor) with double beds and sofas</li>
+            <li>Fully equipped kitchen including washing machine and tumble dryer</li>
+            <li>Shower room</li>
+            <li>Electric heating</li>
+            <li>Secondary Glazing</li>
+         </ul>
+         <button id="book-btn" class="btn">Book Viewing</button>
+         <!-- Form Modal -->
+         <div class="modal fade" tabindex="-1" role="dialog" id="formModal">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+               <div class="modal-content">
+                  <form onsubmit="return sendMail(this);" id="myForm">
+                     <div class="form-group form-modal">
+                        <label for="inputName">Full Name</label>
+                        <textarea class="form-control" id="inputName" rows="1" placeholder="Full Name" required></textarea>
+                     </div>
+                     <div class="form-group form-modal">
+                        <label for="inputEmail">Email Address</label>
+                        <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Email Address" required>        
+                     </div>
+                     <div class="form-group form-modal">
+                        <label for="inputPhone">Phone Number</label>
+                        <input type="number" class="form-control" id="inputPhone" aria-describedby="emailHelp" placeholder="Phone Number" required>        
+                     </div>
+                     <div class="form-group form-modal">
+                        <label for="projectSummary">Which property?</label>
+                        <textarea class="form-control" id="projectSummary" rows="3" placeholder="St George's, Abbotsford..."></textarea>
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                     </div>
+                     <button type="submit" id ="submit" class="btn btn-primary">Submit</button>
+                  </form>
+               </div>
+            </div>
+            <!-- Thank you Modal -->
+            <div class="modal fade" tabindex="-1" role="dialog" id="emailModal">
+               <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                     <div class="modal-header">
+                        <h4 class="modal-title text-center modal-head">Thank you</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                     </div>
+                     <div class="modal-body text-center modal-content">
+                        <p>Many thanks for your enquiry, I'll be in touch soon to confirm the viewing!</p>
+                     </div>
+                     <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="photo-section">
+         <div class="photo-carousel">
+            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+               <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                  <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                  <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+                  <li data-target="#carouselExampleCaptions" data-slide-to="4"></li>
+                  <li data-target="#carouselExampleCaptions" data-slide-to="5"></li>
+               </ol>
+               <div class="carousel-inner">
+                  <div class="carousel-item active">
+                     <img src="assets/images/st-george/bedroom1.jpg" class="d-block w-100" alt="Room 1, St George's Road">
+                     <div class="carousel-caption d-none d-md-block">
+                        <h5>Bedroom 1</h5>
+                     </div>
+                  </div>
+                  <div class="carousel-item">
+                     <img src="assets/images/st-george/bedroom-2.jpg" class="d-block w-100" alt="Room 2, St George's Road">
+                     <div class="carousel-caption d-none d-md-block">
+                        <h5>Bedroom 2</h5>
+                     </div>
+                  </div>
+                  <div class="carousel-item">
+                     <img src="assets/images/st-george/front.jpg" class="d-block w-100" alt="Outside, St George's Road">
+                     <div class="carousel-caption d-none d-md-block">
+                        <h5>Outside</h5>
+                     </div>
+                  </div>
+                  <div class="carousel-item">
+                     <img src="assets/images/st-george/shower-room.jpg" class="d-block w-100" alt="Shower Room, St George's Road">
+                     <div class="carousel-caption d-none d-md-block">
+                        <h5>Shower Room</h5>
+                     </div>
+                  </div>
+                  <div class="carousel-item">
+                     <img src="assets/images/st-george/kitchen2.jpg" class="d-block w-100" alt="Kitchen, St George's Road">
+                     <div class="carousel-caption d-none d-md-block">
+                        <h5>Kitchen</h5>
+                     </div>
+                  </div>
+                  <div class="carousel-item">
+                     <img src="assets/images/st-george/sofa.jpg" class="d-block w-100" alt="Sofa, St George's Road">
+                     <div class="carousel-caption d-none d-md-block">
+                        <h5>Sofa</h5>
+                     </div>
+                  </div>
+               </div>
+               <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+               <span class="sr-only">Previous</span>
+               </a>
+               <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+               <span class="carousel-control-next-icon" aria-hidden="true"></span>
+               <span class="sr-only">Next</span>
+               </a>
+            </div>
+         </div>
+      </div>
+      <div class="explore-section">
+         <h2>Explore the local area</h2>
+         <h3>Browse by:</h3>
+         <button id="cafeRadio" class="btn">Cafes</button>
+         <button id="pubRadio" class="btn">Pubs</button>
+         <button id="restaurantRadio" class="btn">Restaurants</button>    
+         <button id="shopRadio" class="btn">Supermarkets</button>                     
+         <button id="clear-btn" class="btn">Clear Map</button>
+         <div id="explore-map"></div>
+      </div>
+      <footer>
+         <div class="row">
+            <div class="col-sm-4">
+               <p>Ash Tree Estates &#169;</p>
+            </div>
+            <div class="col-sm-4">
+               <p><i class="fa fa-phone"></i> 07976 822 797</p>
+            </div>
+            <div class="col-sm-4">
+               <p>Website created by Adam de Lancey <a href="https://github.com/adamdelancey" target="_blank"><i class="fab fa-github"></i></a></p>
+            </div>
+         </div>
+      </footer>
+      <!-- EmailJS scripts -->
+      <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+      <script> (function(){emailjs.init("user_scvEXqvGskRGGpE58Sfoi");   })();</script> 
+      <!-- JQuery scripts -->
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <!-- My scripts -->
+      <script src="assets/js/properties-listing.js"></script>
+      <script src="assets/js/contact.js"></script>
+      <!-- Google API scripts -->
+      <script src="https://unpkg.com/@google/markerclustererplus@5.1.0/dist/markerclustererplus.min.js"></script>
+      <!-- Bootstrap scripts -->
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXfj6XrQ4zsUPJQ0sS3kBdWUr4Iml1jak&libraries=places"></script>
+   </body>
+</html>
