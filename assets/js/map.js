@@ -8,7 +8,7 @@ let twoBeds = [{
             lng: -2.6073
         }, // St George's Road
         content: `<a href="st-georges.html"><h4 class="info-head">St George's Road</h4></a>
-        <p><i class="fas fa-bed"></i> 2 &emsp;<i class="fas fa-bath"></i> 1 &emsp; <i class="fas fa-pound-sign"></i> 525 each pcm </p>`
+        <p><i class="fas fa-bed"></i> 2 &emsp;<i class="fas fa-bath"></i> 1 &emsp; <i class="fas fa-pound-sign"></i> 535 each pcm </p>`
     },
     {
         coords: {

@@ -5,7 +5,7 @@ let properties = {
     stgeorges: {
         lat: 51.4510,
         lng: -2.6073,        
-        contentString: "<h4>St George's Road, Hotwell</h4><i class='fas fa-bed'></i> 2  &emsp;<i class='fas fa-bath'></i> 1 &emsp; <i class='fas fa-pound-sign'></i> 525 each pcm"
+        contentString: "<h4>St George's Road, Hotwell</h4><i class='fas fa-bed'></i> 2  &emsp;<i class='fas fa-bath'></i> 1 &emsp; <i class='fas fa-pound-sign'></i> 535 each pcm"
     },
 
     abbotsford: { 
